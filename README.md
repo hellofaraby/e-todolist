@@ -1,79 +1,257 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-Todolist
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+E-Todolist adalah aplikasi manajemen tugas berbasis Laravel 11 yang dirancang untuk membantu pengguna mengelola pekerjaan harian secara lebih terstruktur. Aplikasi ini mendukung pencatatan tugas, prioritas, tenggat waktu, label, pencarian lanjutan, statistik progres, serta arsip tugas.
 
 ## Tentang Aplikasi E-Todolist
 
-Aplikasi ini berbasis Laravel 11, kode dasar didapat dari Channel Youtube "Programming Di Rumahrafif" dengan beberapa modifikasi seperti penambahan fitur Tags, dan lain lain.
-Saya akan mengembangkan aplikasi ini lebih lanjut dengan beberapa fitur tambahan.
+Aplikasi ini berbasis Laravel 11. Kode dasar didapat dari Channel Youtube "Programming Di Rumahrafif" dengan beberapa modifikasi seperti penambahan fitur tags dan pengembangan fitur lainnya. Project ini akan terus dikembangkan lebih lanjut dengan beberapa peningkatan tambahan sesuai kebutuhan pembelajaran dan implementasi.
 
 ## Free to Copy and About Me
 
 Aplikasi ini bebas digunakan untuk proyek Anda, dengan tetap mencantumkan kredit kepada Programming Di Rumahrafif dan saya. Segala bentuk penyalahgunaan aplikasi di luar tanggung jawab saya.
 
-Saya ingin mendedikasikan apa yang saya pelajari selama menjadi programmer ke dalam akun gihtub ini (https://github.com/dhanielfaraby) . Di sini, saya akan membuat beberapa aplikasi CRUD sederhana menggunakan Tech Stack populer seperti React, Laravel, dan lainnya. Harapannya, aplikasi-aplikasi ini bisa membantu teman-teman, terutama mahasiswa, dalam mengerjakan proyek tugas atau pekerjaan freelance mereka.
+Saya ingin mendedikasikan apa yang saya pelajari selama menjadi programmer ke dalam akun GitHub saya:
 
-Terima kasih sudah berkunjung dan semoga bermanfaat!
+[https://github.com/hellofaraby](https://github.com/hellofaraby)
 
-## About Laravel
+Di sana, saya akan membuat beberapa aplikasi CRUD sederhana menggunakan tech stack populer seperti React, Laravel, dan lainnya. Harapannya, aplikasi-aplikasi ini dapat membantu teman-teman, terutama mahasiswa, dalam mengerjakan proyek tugas maupun pekerjaan freelance.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Terima kasih sudah berkunjung dan semoga bermanfaat.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Pratinjau Aplikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+GitHub dapat menampilkan gambar pada `README.md` selama file gambar disimpan di dalam repository atau menggunakan URL publik.
 
-## Learning Laravel
+Jika Anda ingin menampilkan screenshot aplikasi pada README, simpan file gambar ke path berikut:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```text
+docs/images/todo-dashboard.png
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Lalu gunakan sintaks berikut:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```md
+![Pratinjau E-Todolist](docs/images/todo-dashboard.png)
+```
 
-## Laravel Sponsors
+Saat ini saya sudah menyiapkan struktur README agar bagian pratinjau mudah ditambahkan begitu file gambar tersebut dimasukkan ke repository.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Fitur Utama
 
-### Premium Partners
+- CRUD tugas: tambah, tampilkan, ubah, hapus, dan arsipkan tugas
+- Label many-to-many pada setiap tugas
+- Smart input parser untuk membaca:
+    - label dengan format `#label`
+    - prioritas dengan format `!high`, `!medium`, `!low`
+    - waktu seperti `besok jam 9`
+- Prioritas tugas: `low`, `medium`, `high`
+- Tenggat waktu dan indikator visual status waktu
+- Dashboard statistik:
+    - total tugas
+    - tugas selesai
+    - tugas berjalan
+    - persentase progres
+- Advanced search:
+    - kata kunci biasa
+    - `#label`
+    - `is:done`
+    - `is:pending`
+    - `priority:high`
+- Filter berdasarkan label
+- Soft delete dengan fitur arsip dan pemulihan data
+- Tampilan modern berbasis Bootstrap 5
+- Mode gelap sederhana
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Teknologi yang Digunakan
 
-## Contributing
+- PHP 8.2+ atau versi yang sesuai dengan dependency project
+- Laravel 11
+- SQLite
+- Blade Template Engine
+- Bootstrap 5
+- Bootstrap Icons
+- Vite
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Struktur Fitur Utama
 
-## Code of Conduct
+Beberapa file penting dalam aplikasi ini:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- `app/Http/Controllers/Todo/TodoController.php`
+  Mengelola alur utama todo, pencarian, statistik, arsip, dan relasi label.
+- `app/Models/Todo.php`
+  Model utama todo dengan soft delete, cast, dan relasi ke label.
+- `app/Models/Tag.php`
+  Model label dengan relasi many-to-many ke todo.
+- `app/Services/TodoParserService.php`
+  Menangani parsing input pintar dan parsing query pencarian lanjutan.
+- `app/Http/Requests/StoreTodoRequest.php`
+  Validasi saat menambahkan tugas.
+- `app/Http/Requests/UpdateTodoRequest.php`
+  Validasi saat memperbarui tugas.
+- `resources/views/todo/app.blade.php`
+  Tampilan utama aplikasi.
 
-## Security Vulnerabilities
+## Contoh Smart Input
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Contoh input:
 
-## License
+```text
+Bayar listrik besok jam 9 #rumah !high
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Hasil parsing:
+
+- Tugas: `Bayar listrik`
+- Tenggat waktu: `besok jam 9`
+- Label: `rumah`
+- Prioritas: `high`
+
+Contoh lain:
+
+```text
+Meeting client #kerja #urgent !high
+```
+
+## Contoh Advanced Search
+
+Pencarian berikut didukung:
+
+```text
+#kerja is:pending priority:high
+```
+
+Artinya:
+
+- tampilkan tugas dengan label `kerja`
+- status belum selesai
+- prioritas tinggi
+
+Contoh query lain:
+
+```text
+laporan is:done
+```
+
+## Instalasi
+
+1. Clone repository
+
+```bash
+git clone https://github.com/username/e-todolist.git
+cd e-todolist
+```
+
+2. Install dependency backend
+
+```bash
+composer install
+```
+
+3. Install dependency frontend
+
+```bash
+npm install
+```
+
+4. Salin file environment
+
+```bash
+cp .env.example .env
+```
+
+Pada Windows, Anda dapat menyalin file secara manual jika perintah `cp` tidak tersedia.
+
+5. Generate application key
+
+```bash
+php artisan key:generate
+```
+
+6. Pastikan konfigurasi database menggunakan SQLite pada file `.env`
+
+```env
+DB_CONNECTION=sqlite
+DB_DATABASE=C:/laragon/www/e-todolist/database/database.sqlite
+```
+
+7. Jalankan migrasi
+
+```bash
+php artisan migrate
+```
+
+8. Jalankan seeder jika diperlukan
+
+```bash
+php artisan db:seed
+```
+
+9. Jalankan server development
+
+```bash
+php artisan serve
+```
+
+10. Jalankan Vite
+
+```bash
+npm run dev
+```
+
+## Catatan Database
+
+Aplikasi ini menggunakan SQLite agar proses setup lebih sederhana. Pastikan file berikut tersedia:
+
+```text
+database/database.sqlite
+```
+
+Jika file belum ada, Anda dapat membuatnya terlebih dahulu.
+
+## Pengujian
+
+Untuk menjalankan pengujian:
+
+```bash
+php artisan test
+```
+
+Project ini sudah disiapkan untuk pengujian unit dan feature, termasuk pengujian parser, pencarian, serta alur soft delete.
+
+## Status Pengembangan
+
+Fitur yang sudah tersedia saat ini:
+
+- sistem label
+- prioritas tugas
+- tenggat waktu
+- parser input pintar
+- pencarian lanjutan
+- statistik dashboard
+- soft delete
+- dark mode sederhana
+
+Pengembangan lanjutan yang dapat ditambahkan:
+
+- autentikasi pengguna
+- multi-user workspace
+- notifikasi pengingat tugas
+- export data
+- filter tanggal yang lebih detail
+
+## Lisensi
+
+Project ini dapat digunakan sebagai referensi pembelajaran dan pengembangan lebih lanjut. Jika Anda mendistribusikan ulang atau mengadaptasi project ini, sebaiknya sertakan atribusi yang sesuai terhadap sumber pembelajaran yang digunakan.
+
+## Catatan Tambahan untuk GitHub
+
+Ya, gambar seperti screenshot yang Anda kirim bisa dimasukkan ke `README.md` dan akan tampil dengan baik di GitHub, dengan syarat:
+
+- file gambar disimpan di dalam repository, misalnya `docs/images/todo-dashboard.png`, atau
+- gambar diambil dari URL publik yang dapat diakses tanpa autentikasi
+
+Jika Anda ingin, saya bisa lanjut bantu tahap berikutnya:
+
+1. menyiapkan folder `docs/images/`
+2. menambahkan blok gambar ke README
+3. atau membuat README versi yang lebih profesional lagi dengan badge, daftar isi, dan section screenshot yang lebih menarik
